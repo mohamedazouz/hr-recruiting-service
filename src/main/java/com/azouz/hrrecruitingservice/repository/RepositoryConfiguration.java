@@ -1,5 +1,8 @@
 package com.azouz.hrrecruitingservice.repository;
 
+import com.azouz.hrrecruitingservice.notification.LoggerNotification;
+import com.azouz.hrrecruitingservice.notification.NotificationPublisher;
+import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +13,13 @@ import org.springframework.context.annotation.Configuration;
 public class RepositoryConfiguration {
 
   @Bean
-  public RecruitingServiceRepository recruitingServiceRepository() {
-    return new InMemoryRecruitingServiceRepository();
+  public NotificationPublisher notificationPublisher() {
+    return new NotificationPublisher(Lists.newArrayList(new LoggerNotification()));
+  }
+
+  @Bean
+  public RecruitingServiceRepository recruitingServiceRepository(
+      final NotificationPublisher notificationPublisher) {
+    return new InMemoryRecruitingServiceRepository(notificationPublisher);
   }
 }

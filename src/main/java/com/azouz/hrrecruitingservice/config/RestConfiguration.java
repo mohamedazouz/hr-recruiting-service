@@ -1,6 +1,6 @@
 package com.azouz.hrrecruitingservice.config;
 
-import com.azouz.hrrecruitingservice.exception.ControllerAdviceTraits;
+import com.azouz.hrrecruitingservice.exception.trait.ControllerAdviceTraits;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.springframework.context.annotation.Bean;

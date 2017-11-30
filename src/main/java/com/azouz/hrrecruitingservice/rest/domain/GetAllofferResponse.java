@@ -1,5 +1,6 @@
-package com.azouz.hrrecruitingservice.domain;
+package com.azouz.hrrecruitingservice.rest.domain;
 
+import com.azouz.hrrecruitingservice.domain.Offer;
 import java.util.Collection;
 
 /**
